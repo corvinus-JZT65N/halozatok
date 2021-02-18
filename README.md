@@ -1,3 +1,3 @@
 # halozatok
-Első gyakorlat - Hajós Teszt -> elírva
-Második gyakorlat - Hajós Teszt -> elírva (hiperhivatkozást az index.html oldalon használtam)
+Első gyakorlat - Hajós Teszut -> elírva
+Második gyakorlat - Hajós Teszut -> elírva (hiperhivatkozást az index.html oldalon használtam)
