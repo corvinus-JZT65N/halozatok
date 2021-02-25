@@ -1,0 +1,22 @@
+﻿body
+{
+    font-family: Calibri;
+    color: white;
+    background-color: black;
+}
+
+div.vastag {
+    font-weight: bold;
+}
+
+hr.kék {
+    color: blue;
+}
+
+ol.b {
+    list-style-type: lower-alpha;
+}
+
+span.dolt {
+    font-style: italic;
+}
