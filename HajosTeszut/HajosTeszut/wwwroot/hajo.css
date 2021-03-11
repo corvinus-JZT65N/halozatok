@@ -28,8 +28,9 @@ div {
     flex-direction: row;
     flex-grow: 0;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
 }
 
 #válaszok {
@@ -92,30 +93,20 @@ img {
     border: 1px solid blue;
 }
 
-/* 800px-nél nagyobb képernyő*/
-@media screen and (min-width: 800px) {
-        body {
-            display: flex;
-            flex-direction: column;
-            max-width: 1500px;
-            margin: auto;
-        }
+/* 800px-nél kisebb képernyő*/
+@media screen and (max-width: 800px) {
 
-        #main {
-            display: flex;
-            flex-wrap: wrap;
-        }
+    #középső {
+        flex-direction: row;
+        flex-grow: 0;
+        flex-wrap: nowrap;
+        display:inline;
+    }
 
-        #nav,
-        #header {
-            order: -1;
-        }
+    #külső {
+        height: 100%;
+        flex-direction: column;
+        display: inline;
+    }
 
-        #article {
-            flex: 1 1 85%;
-        }
-
-        #aside {
-            flex: 1 1 15%;
-        }
     }
