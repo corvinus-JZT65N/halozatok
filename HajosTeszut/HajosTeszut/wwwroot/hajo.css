@@ -1,12 +1,16 @@
-﻿html, body {
+﻿* {
+    box-sizing: border-box;
+}
+
+html, body {
     height: 100%;
 }
 
 div {
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     background-color: lightblue;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 #külső {
@@ -16,17 +20,23 @@ div {
 }
 
 #kérdés_szöveg {
+    border: 1px solid blue;
 }
 
 #középső {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:center;
 }
 
 #válaszok {
-    flex-grow: 1;
+    flex-grow: 0;
     flex-shrink: 1;
+    border-radius: 20px;
+    flex: 40%;
 }
 
 #vezérlő {
@@ -34,16 +44,21 @@ div {
     flex-direction: row;
     justify-content: space-between;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+}
 #kép {
     overflow: hidden;
-    flex-shrink:0;
+    flex-grow: 0;
     flex-shrink: 0;
+    flex: 60%;
 }
 
 .gomb {
     padding: 20px;
     width: 80px;
+    border: 1px solid blue;
 }
 
 .kerdes {
@@ -52,14 +67,55 @@ div {
 .kattintható:hover {
     background-color: fuchsia;
     color: white;
+    border: 1px solid blue;
 }
 
-.valaszKattinthatoJó:hover{
+.valaszKattinthatoJó:hover {
     color: green;
-    background-color:green;
+    background-color: green;
+    border-radius: 20px;
+    border: 1px solid blue;
 }
 
-.valaszRossz:hover {
+.valaszKattinthatoJó {
+    border-radius: 20px;
+    border: 1px solid blue;
+}
+
+.valaszKattinthatoRossz:hover {
     color: red;
     background-color: red;
+    border-radius: 20px;
 }
+.valaszKattinthatoRossz {
+    border-radius: 20px;
+    border: 1px solid blue;
+}
+
+/* 800px-nél nagyobb képernyő*/
+@media screen and (min-width: 800px) {
+        body {
+            display: flex;
+            flex-direction: column;
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        #main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #nav,
+        #header {
+            order: -1;
+        }
+
+        #article {
+            flex: 1 1 85%;
+        }
+
+        #aside {
+            flex: 1 1 15%;
+        }
+    }
