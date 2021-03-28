@@ -70,6 +70,16 @@ img {
     color: white;
     border: 1px solid blue;
 }
+.valaszKattinthato {
+    border-radius: 20px;
+    border: 1px solid blue;
+}
+
+.valaszKattinthato:hover {
+    background-color: fuchsia;
+    color: white;
+    border: 1px solid blue;
+}
 
 .valaszKattinthatoJó:hover {
     color: green;
