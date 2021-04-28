@@ -18,18 +18,11 @@ var helyesValasz;
     }
 
 /*function kérdésMegjelenítés2(kérdés) {
-    let kérdés_szöveg = document.getElementById("kérdés_szöveg");
-    let kép = document.getElementById("kép1");
-    let válasz1 = document.getElementById("válasz1");
-    let válasz2 = document.getElementById("válasz2");
-    let válasz3 = document.getElementById("válasz3");
-
     console.log(kérdés);
     kérdés_szöveg.innerText = kérdés.questionText
     document.getElementById("válasz1").innerText = kérdés.answer1
     document.getElementById("válasz2").innerText = kérdés.answer2
     document.getElementById("válasz3").innerText = kérdés.answer3
-    helyesValasz = kérdés.correctAnswer
     document.getElementById("kép").src = "https://szoft1.comeback.hu/hajo/" + kérdés.image;
 }*/
 
