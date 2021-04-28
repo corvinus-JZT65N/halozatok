@@ -1,10 +1,12 @@
 ﻿var kérdések;
 var kérdésSorszám = 0;
+var helyesValasz;
 
     function letöltés() {
         fetch('/questions.json')
             .then(response => response.json())
-            .then(data => letöltésBefejeződött(data));
+            .then(data => letöltésBefejeződött(data))
+            .then(data => kérdésMegjelenítés(data));
     }
 
     function letöltésBefejeződött(d) {
@@ -15,13 +17,28 @@ var kérdésSorszám = 0;
         kérdésMegjelenítés(kérdésSorszám);
     }
 
+/*function kérdésMegjelenítés2(kérdés) {
+    let kérdés_szöveg = document.getElementById("kérdés_szöveg");
+    let kép = document.getElementById("kép1");
+    let válasz1 = document.getElementById("válasz1");
+    let válasz2 = document.getElementById("válasz2");
+    let válasz3 = document.getElementById("válasz3");
+
+    console.log(kérdés);
+    kérdés_szöveg.innerText = kérdés.questionText
+    document.getElementById("válasz1").innerText = kérdés.answer1
+    document.getElementById("válasz2").innerText = kérdés.answer2
+    document.getElementById("válasz3").innerText = kérdés.answer3
+    helyesValasz = kérdés.correctAnswer
+    document.getElementById("kép").src = "https://szoft1.comeback.hu/hajo/" + kérdés.image;
+}*/
+
 var kérdésMegjelenítés = function (kérdésSzáma) {
     let kérdés_szöveg = document.getElementById("kérdés_szöveg");
     let kép = document.getElementById("kép1");
     let válasz1 = document.getElementById("válasz1");
     let válasz2 = document.getElementById("válasz2");
     let válasz3 = document.getElementById("válasz3");
-    let helyesValasz;
 
     kérdés_szöveg.innerHTML = kérdések[kérdésSzáma].questionText
     kép.src = "https://szoft1.comeback.hu/hajo/" + kérdések[kérdésSzáma].image
@@ -37,6 +54,27 @@ window.onload = function () {
 
     letöltés();
 
+    document.getElementById("válasz1").onclick = () => {
+        if (helyesValasz == 1) {
+            document.getElementById("válasz1").classList.remove('valaszKattinthato');
+            document.getElementById("válasz1").classList.add('valaszHelyes');
+        }
+    }
+
+    document.getElementById("válasz2").onclick = () => {
+        if (helyesValasz == 2) {
+            document.getElementById("válasz2").classList.remove('valaszKattinthato');
+            document.getElementById("válasz2").classList.add('valaszHelyes');
+        }
+    }
+
+    document.getElementById("válasz3").onclick = () => {
+        if (helyesValasz == 3) {
+            document.getElementById("válasz3").classList.remove('valaszKattinthato');
+            document.getElementById("válasz3").classList.add('valaszHelyes');
+        }
+    }
+
     document.getElementById("Vissza").onclick = () => {
         if (kérdésSorszám == 0) {
             kérdésSorszám = kérdések.length - 1;
@@ -46,6 +84,14 @@ window.onload = function () {
             kérdésSorszám--;
             letöltés();
         }
+
+        document.getElementById("válasz1").classList.remove('valaszHelyes');
+        document.getElementById("válasz2").classList.remove('valaszHelyes');
+        document.getElementById("válasz3").classList.remove('valaszHelyes');
+
+        document.getElementById("válasz1").classList.add('valaszKattinthato');
+        document.getElementById("válasz2").classList.add('valaszKattinthato');
+        document.getElementById("válasz3").classList.add('valaszKattinthato');
     }
 
     document.getElementById("Előre").onclick = () => {
@@ -58,7 +104,17 @@ window.onload = function () {
             kérdésSorszám++;
             letöltés();
         }
+
+        document.getElementById("válasz1").classList.remove('valaszHelyes');
+        document.getElementById("válasz2").classList.remove('valaszHelyes');
+        document.getElementById("válasz3").classList.remove('valaszHelyes');
+
+        document.getElementById("válasz1").classList.add('valaszKattinthato');
+        document.getElementById("válasz2").classList.add('valaszKattinthato');
+        document.getElementById("válasz3").classList.add('valaszKattinthato');
     }
+
+    
 }
 
 
