@@ -45,10 +45,12 @@ div {
     flex-direction: row;
     justify-content: space-between;
 }
+
 img {
     max-width: 100%;
     height: auto;
 }
+
 #kép {
     overflow: hidden;
     flex-grow: 0;
@@ -56,14 +58,21 @@ img {
     flex: 60%;
 }
 
-.gomb {
+.vissza_gomb {
     padding: 20px;
     width: 80px;
     border: 1px solid blue;
 }
 
+.előre_gomb {
 
-.valaszKattinthato {
+}
+padding: 20px;
+width: 80px;
+border: 1px solid blue;
+
+
+.kerdes kattintható {
     border-radius: 20px;
     border: 1px solid blue;
 }
@@ -74,30 +83,31 @@ img {
     border-radius: 20px;
 }
 
-.valaszKattinthato:hover {
+.kerdes kattintható:hover {
     background-color: red;
     color: white;
     border: 1px solid blue;
 }
 
-.valaszKattinthatoJó:hover {
+.kerdes kattintható jó:hover {
     color: green;
     background-color: green;
     border-radius: 20px;
     border: 1px solid blue;
 }
 
-.valaszKattinthatoJó {
+.kerdes kattintható jó {
     border-radius: 20px;
     border: 1px solid blue;
 }
 
-.valaszKattinthatoRossz:hover {
+.kerdes kattintható rossz:hover {
     color: red;
     background-color: red;
     border-radius: 20px;
 }
-.valaszKattinthatoRossz {
+
+.kerdes kattintható rossz {
     border-radius: 20px;
     border: 1px solid blue;
 }
@@ -109,7 +119,7 @@ img {
         flex-direction: row;
         flex-grow: 0;
         flex-wrap: nowrap;
-        display:inline;
+        display: inline;
     }
 
     #külső {
@@ -117,5 +127,4 @@ img {
         flex-direction: column;
         display: inline;
     }
-
-    }
+}
