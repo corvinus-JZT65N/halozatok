@@ -13,6 +13,8 @@ div {
     border-radius: 4px;
 }
 
+.kattintható
+
 #külső {
     height: 100%;
     display: flex;
@@ -62,42 +64,25 @@ img {
     border: 1px solid blue;
 }
 
-
-.valaszKattinthato {
+.valasz {
     border-radius: 20px;
     border: 1px solid blue;
 }
-
-.valaszHelyes {
-    background-color: green;
-    border: 1px solid blue;
-    border-radius: 20px;
-}
-
-.valaszKattinthato:hover {
-    background-color: red;
+.kattintható:hover {
+    background-color: fuchsia;
     color: white;
     border: 1px solid blue;
 }
 
-.valaszKattinthatoJó:hover {
-    color: green;
+.jó {
     background-color: green;
     border-radius: 20px;
     border: 1px solid blue;
 }
 
-.valaszKattinthatoJó {
-    border-radius: 20px;
-    border: 1px solid blue;
-}
 
-.valaszKattinthatoRossz:hover {
-    color: red;
+.rossz {
     background-color: red;
-    border-radius: 20px;
-}
-.valaszKattinthatoRossz {
     border-radius: 20px;
     border: 1px solid blue;
 }
