@@ -12,8 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\beadandoZenek.html" />
     <Content Include="wwwroot\jokes.html" />
     <Content Include="wwwroot\questions.json" />
+    <Content Include="wwwroot\zene.css" />
+    <Content Include="wwwroot\zenek.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +31,7 @@
     <None Include="wwwroot\jsgyak.css" />
     <None Include="wwwroot\jsgyak.html" />
     <None Include="wwwroot\jsgyak.js" />
+    <None Include="wwwroot\jsZenek.js" />
     <None Include="wwwroot\kerdesek.html" />
     <None Include="wwwroot\no-image.png" />
     <None Include="wwwroot\profkep.jpg" />

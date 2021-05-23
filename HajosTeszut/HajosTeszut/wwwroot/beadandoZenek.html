@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>        @import url("zene.css");
+    </style>
+    <link rel="icon" href="zenek.png" />
+    <title>Zenék</title>
+</head>
+<body>
+    <form>
+        <div id="zenekLista"></div>
+        <div>
+            <p>Add meg a szám előadóját és címét! (egyik rublikát se hagyd üresen, kivéve ha nem ismert az előadó!)</p>
+            <input id="eloadokSzoveg" type="text" placeholder="Előadó megadása" />
+        </div>
+        <div>
+            <input id="szamcimSzoveg" type="text" placeholder="Szám címének megadása" />
+            <button id="addButtonZeneszam">Új szám felvétele</button>
+        </div>
+        <hr />
+        <div>
+            <input id="torlendoSzamId" type="text" placeholder="Törlendő szám ID-jának megadása" />
+            <button id="delAdottSzam">Megadott szám törlése</button>
+        </div>
+        <hr />
+        <div>
+            <button type="button" onclick="számokListázása()">Listázd a kedvenc számokat!</button>
+            <div id="zenekKilistazva">
+            </div>
+        </div>
+
+    </form>
+    <script>
+        // ----------------------- szám hozzáadás ----------------------- 
+        document.getElementById("addButtonZeneszam").addEventListener("click", () => {
+            
+            let data = {
+                Előadó : document.getElementById("eloadokSzoveg").value ,
+                Cím : document.getElementById("szamcimSzoveg").value
+            }
+
+
+            fetch("api/zenek",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(x => {
+                    if (x.ok) {
+                        alert("Siker");
+
+                    }
+                    else {
+                        alert("Kudarc");
+                    }
+                });	    
+
+        });
+
+
+        // ----------------------- törlés -----------------------
+        document.getElementById("delAdottSzam").addEventListener("click", () => {
+        var torlendo = document.getElementById("torlendoSzamId").value
+        fetch("api/zenek/" + torlendo,
+            {
+                method: 'DELETE',
+            }).then(x => {
+                if (x.ok) {
+                    alert("Siker");
+
+                }
+                else {
+                    alert("Kudarc");
+                }
+            });	    
+
+        });
+
+        // ----------------------- szám listázás -----------------------
+        function számokListázása()
+        {
+            fetch("api/zenek")
+                .then(result =>
+                {
+                    if (!result.ok)
+                    {
+                        console.error(`Há nem működik gecc: ${result.status}`)
+                        return null
+                    }
+                    else
+                    {
+                        return result.json()
+                    }
+                })
+                .then(data => {
+                    document.getElementById("zenekKilistazva").innerHTML = ""
+                    for (var i = 0; i < data.length; i++) {
+                        document.getElementById("zenekKilistazva").innerHTML += data[i].id + "-" + data[i].előadó + " - " + data[i].cím + `<br />`
+                    }
+                })
+            console.log("kecske")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿body {
+    background-color: fuchsia;
+}
+
+p {
+    color: moccasin
+}
+button {
+    color: moccasin;
+    background-color: darkcyan;
+    border-color: aqua;
+}
+
+input {
+    background-color: yellow;
+    border-color: greenyellow;
+}
+
+div {
+    color: azure;
+}
